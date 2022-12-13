@@ -1,0 +1,35 @@
+{
+    "name": "list",
+    "type": "flogo:function",
+    "version": "0.1.0",
+    "title": "List Functions",
+    "author": "Gonzalo Lopez <glopez@tibco.com>",
+    "description": "List Functions",
+    "functions": [
+        {
+            "name": "sort",
+            "description": "Sort a string/number list or an object list by a field. Params -> list, desc(bool), field(optional string).",
+            "example": "list.sort($flow.numbers, false), list.sort($flow.names, true), list.sort($flow.persons, false, \"age\")",
+            "args": [
+                {
+                    "name": "items",
+                    "type": "array",
+                    "valueType": "any"
+                },
+                {
+                    "name": "desc",
+                    "type": "boolean"
+                },
+                {
+                    "name": "field",
+                    "type": "string",
+                    "required": false
+                }
+            ],
+            "return": {
+                "type": "array",
+                "valueType": "any"
+            }
+        }
+    ]
+}

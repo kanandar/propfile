@@ -1,0 +1,62 @@
+{
+	"name":"scribeencryptdecrypt",
+	"type":"flogo:function",
+	"version":"0.0.1",
+	"title":"encrypt",
+	"description":"Encrypt using AES ",
+	"functions":[
+		{
+		"name":"aesencrypt",
+		"description":"Encrypts the given string using AES algorithm",
+		"example":"aesencrypt(plaintext,passphrase,salt)",
+		"args":[
+			{
+			 "name":"plaintext",
+			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"passphrase",
+			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"salt",
+			 "type":"string",
+			 "valueType":"string"
+			}
+		],
+		"return":{
+			"type":"string",
+			"valueType":"string"
+		}
+		},
+
+		{
+		"name":"aesdecrypt",
+		"description":"Encrypts the given string using AES algorithm",
+		"example":"aesdecrypt(encryptedText,passphrase,salt)",
+		"args":[
+			{
+			 "name":"encryptedText",
+			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"passphrase",
+			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"salt",
+			 "type":"string",
+			 "valueType":"string"
+			}
+		],
+		"return":{
+			"type":"string",
+			"valueType":"string"
+		}
+		}
+	]
+}
