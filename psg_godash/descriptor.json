@@ -1,0 +1,104 @@
+{
+    "name": "psg_godash",
+    "type": "flogo:function",
+    "version": "1.0.0",
+    "author" : "Abhishek Bhatia",    
+    "title": "psg lodash style functions",
+    "description": "psg lodash style functions for go.",
+    "functions": [
+      {
+        "name": "returnDefaultIfEmpty",
+        "description": "This function returns the default value (second parameter), if input value (first parameter) is nil or zero length string. Input Value and Default value can be of any type. The type of return value will either be of input value's type of default value's type.",
+        "example": "psg_godash.returnDefaultIfEmpty(\"\",0) => 0; psg_godash.returnDefaultIfEmpty(\"test\",0) => \"test\" ",
+        "args": [
+          {
+            "name": "inputValue",
+            "type": "any",
+            "valueType": "any"
+          },
+          {
+            "name": "defaultValue",
+            "type": "any",
+            "valueType": "any"
+          }
+        ],
+        "return": {
+          "type": "any",
+          "valueType": "any"
+        }
+      },
+      {
+        "name": "isEmpty",
+        "description": "This function returns true, if input value (first parameter) is nil or zero length string, otherwise returns false. Input Value can be of any type.",
+        "example": "psg_godash.isEmpty(\"\") => true ; psg_godash.isEmpty(\"test\") => false ",
+        "args": [
+          {
+            "name": "inputValue",
+            "type": "any",
+            "valueType": "any"
+          }
+        ],
+        "return": {
+          "type": "boolean",
+          "valueType": "boolean"
+        }
+      },
+      {
+        "name": "isJSONObject",
+        "description": "This function returns true if the first parameter is a valid json object (supports receiving json string or object). Second parameter allows user to specify whether to treat a null input value (first parameter) as a valid json object or not.",
+        "example": "psg_godash.isJSONObject(null,boolean.true()) => boolean.true();  psg_godash.isJSONObject(\"{\"test\":\"123\"}\",boolean.false()) => boolean.true() ",
+        "args": [
+          {
+            "name": "inputToValidate",
+            "type": "any",
+            "valueType": "any"
+          },
+          {
+            "name": "treatNullInputAsAValidJSONObject",
+            "type": "bool",
+            "valueType": "bool"
+          }
+        ],
+        "return": {
+          "type": "bool",
+          "valueType": "bool"
+        }
+      },
+      {
+        "name": "removeNullFields",
+        "description": "This function removes fields which have null values, from the input json object. It expects a json object and returns a json object with null fields removed.\n// There is an optional second parameter (can be nil), where one can specify an array of strings,\n// where each string value represents name of an object array, ",
+        "example": "psg_godash.removeNullFields({\"lead\":{\"key1\":null, \"key2\":123,\"arr1\":[\"\"]}},\"arr1\":[{\"name\":\"a\",\"value\":null},{\"name\":\"a\",\"value\":\"123\"}],false,false,false) => {\"lead\":{\"key2\":123,\"arr1\":[{\"name\":\"a\",\"value\":\"123\"}]}}",
+        "args": [
+          {
+            "name": "jsonObject",
+            "type": "any",
+            "valueType": "any"
+          },
+          {
+            "name": "arrayOfArrayNames",
+            "type": "array",
+            "valueType": "string"
+          },
+          {
+            "name": "removeEmptyObjects",
+            "type": "bool",
+            "valueType": "bool"
+          },
+          {
+            "name": "removeArrayIfAnyObjectFromArrayRemoved",
+            "type": "bool",
+            "valueType": "bool"
+          },
+          {
+            "name": "treatEmptyAsNull",
+            "type": "bool",
+            "valueType": "bool"
+          }
+        ],
+        "return": {
+          "type": "any",
+          "valueType": "any"
+        }
+      }    
+    ]
+  }
