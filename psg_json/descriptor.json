@@ -1,0 +1,32 @@
+{
+    "name": "psg_json",
+    "type": "flogo:function",
+    "version": "1.0.0",
+    "title": "psg json functions",
+    "author" : "Abhishek Bhatia",
+    "description": "psg json functions",
+    "functions": [
+      {
+        "name": "path",
+        "description": "Use JSONPath expression to get value from JSON object. Refer https://github.com/oliveagle/jsonpath for expression format.",
+        "example": "psg_json.path(\"$.lead.email\",\"{lead:{email:ab@test.com, crmid:123}}\") => ab@test.com",
+        "args": [
+          {
+            "name": "path",
+            "type": "string",
+            "valueType": "string"
+          },
+          {
+            "name": "jsonObj",
+            "type": "object",
+            "valueType": "any"
+          }
+        ],
+        "return": {
+          "type": "any",
+          "valueType": "any"
+        }
+      }
+    ]
+  }
+  
